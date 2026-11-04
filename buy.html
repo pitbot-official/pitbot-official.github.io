@@ -244,23 +244,23 @@ input[readonly]{cursor:default;outline:none;user-select:none;-webkit-user-select
 const S=window.SHOP, won=S.won, $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
 const e=S.isEarly(), pre=S.isPre(), when=S.launchLabel;
 const META={
-  zone:{name:'Zone',who:'PIT이 있는 헬스장 · 스튜디오에서',tag:()=>`월 ${won(S.zoneYear()/12)}부터`,inc:['PIT존 실시간 AI 코칭','LOOP 기록 · 리포트','가까운 PIT존 예약','루틴 마켓 · 후기 포인트']},
-  home:{name:'Home',who:'집에 PIT을 들여 혼자 또는 가족과',tag:()=>`월 ${won(S.homePrice())}`,inc:['집에서 PIT과 1:1 코칭','가족 4인 기록 분리','WEAR · POD 1세트 포함','설치 · AS 포함']},
+  zone:{name:'Zone',who:'PIT이 있는 헬스장 · 스튜디오에서',tag:()=>`월 ${won(S.zoneYear()/12)}부터`,inc:['PIT존 실시간 AI 코칭','LOOP 기록 · 리포트','가까운 PIT존 예약','루틴 마켓 전체 이용']},
+  home:{name:'Home',who:'집에 PIT을 들여 혼자 또는 가족과',tag:()=>`월 ${won(S.homePrice())}`,inc:['집에서 PIT과 1:1 코칭','가족 4인 기록 분리','WEAR · POD 1세트 포함','설치 · AS 포함','루틴 마켓 전체 이용']},
   biz:{name:'Business Pro',who:'헬스장 · 스튜디오 · 그룹 운동 공간',tag:()=>`월 ${won(S.bizPrice())}`,inc:['PIT 설치 · 공간 자동 매핑','LOOP Admin 실시간 관제','회원 구독 · 코칭 현황 관리','회원 구독료 30% 배분']}
 };
 const u=new URLSearchParams(location.search);
 let plan=META[u.get('plan')]?u.get('plan'):'zone', bill=u.get('bill')==='month'?'month':'year', wear=u.get('wear')==='buy'?'buy':'rent', units=1;
 
 $('#plans').innerHTML=Object.entries(META).map(([k,p])=>`<button type="button" data-k="${k}"><b>${p.name}</b><span>${p.who}</span><em>${p.tag()}</em></button>`).join('');
-$('#bills [data-b=year]').innerHTML=`연간 ${won(S.zoneYear())}<small>월 ${won(S.zoneYear()/12)} · 월간보다 ${won(S.zone.month*12-S.zoneYear())} 절약</small>`;
+$('#bills [data-b=year]').innerHTML=`연간 ${won(S.zoneYear())}<small>월 ${won(S.zoneYear()/12)}${e?` · 정가보다 ${won(S.zone.yearList-S.zone.yearEarly)} 절약`:` · 월간보다 ${won(S.zone.month*12-S.zone.yearList)} 절약`}</small>`;
 $('#bills [data-b=month]').innerHTML=`월간 ${won(S.zone.month)}<small>언제든 해지${pre?' · 1월 5일 첫 결제':''}</small>`;
 
 /* 지금 고른 구성의 금액과 안내 */
 function quote(){
   const q={lines:[],today:0,small:[],cta:''};
   if(plan==='zone'){
-    if(bill==='year'){ const y=S.zoneYear(), base=S.zone.month*12;
-      q.lines.push(['Zone 12개월',won(base)],[e?'얼리버드 연간 할인':'연간 할인','−'+won(base-y),'off']); q.today=y;
+    if(bill==='year'){ const y=S.zoneYear();
+      q.lines.push(['Zone 연간 (12개월)',won(S.zone.yearList)]); if(e) q.lines.push(['얼리버드 할인','−'+won(S.zone.yearList-y),'off']); q.today=y;
       q.small.push('중도 해지 시 이용한 달을 월간 요금으로 계산해 남은 금액 환불');
     } else { q.lines.push(['Zone 월간',`${won(S.zone.month)} / 월`]); if(pre) q.lines.push(['첫 결제일',when]); q.today=pre?0:S.zone.month; q.small.push('언제든 해지'); }
     if(wear==='buy'){ q.lines.push(['WEAR 패키지 (POD 포함)',won(S.wear)],['배송비','무료']); q.today+=S.wear; q.small.push(`WEAR는 ${when}부터 순차 배송`); }
@@ -273,7 +273,7 @@ function quote(){
     q.cta=`예약금 ${won(q.today)} 결제하기`;
   } else { const p=S.bizPrice();
     q.lines.push([`PIT ${units}대`,`${won(p*units)} / 월`],['약정',`${S.biz.months}개월`],['부가세','별도']); if(e) q.lines.push(['얼리버드 요금',`첫 ${S.biz.earlyMonths}개월`]); q.today=S.biz.deposit*units;
-    q.small.push(`${when}부터 예약 순서대로 설치`,'예약금은 첫 달 요금에서 차감','설치 전 취소하면 예약금 전액 환불','회원 월간 구독료(부가세 제외)의 30%를 운영자에게 배분');
+    q.small.push(`${when}부터 예약 순서대로 설치`,'예약금은 첫 달 요금에서 차감','설치 전 취소하면 예약금 전액 환불','회원 구독료(부가세 제외)의 30%를 운영자에게 배분');
     q.cta=`예약금 ${won(q.today)} 결제하기`;
   }
   return q;
