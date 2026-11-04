@@ -567,6 +567,64 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .biz-side img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .note { font-size: 12.5px; color: var(--ink-2); margin-top: 14px; }
 
+/* 출시 전 얼리버드 + 요금 계산 */
+.ebar { background: var(--ink); color: #fff; margin: calc(-1 * clamp(100px, 12vw, 170px)) 0 clamp(64px, 8vw, 110px); }
+.ebar-in { display: flex; justify-content: space-between; align-items: center; gap: 8px 28px; flex-wrap: wrap; padding-block: 16px; font-size: 15px; font-weight: 700; }
+.ebar b { font-size: 30px; color: var(--orange); margin-right: 12px; vertical-align: -3px; }
+.hero-eb { display: block; margin-bottom: 14px; font-size: 14.5px; font-weight: 700; text-decoration: none; }
+.hero-eb::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; background: var(--orange); vertical-align: 2px; }
+.plan .seg.bill { align-self: flex-start; background: var(--fog); box-shadow: none; }
+.plan .seg.bill button { padding: 8px 16px; font-size: 13.5px; }
+.plan .price s { color: var(--ink-2); font-size: 16px; }
+.plan.dark .price s { color: var(--stone); }
+.plan .pnote { font-size: 14.5px; font-weight: 700; margin-top: -12px; }
+.plan .psep { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+.plan.dark .psep { color: var(--stone); }
+.plan .tag:empty { display: none; }
+.calc { color-scheme: light; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 80px); background: #fff; border-radius: 6px; padding: clamp(24px, 4vw, 56px); margin-top: 8px; align-items: center; }
+.calc h3 { font-size: clamp(26px, 3vw, 42px); font-weight: 800; letter-spacing: -.045em; line-height: 1.2; }
+.calc label { display: block; margin-top: 26px; font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
+.calc output { font-size: 1.5em; font-weight: 800; color: var(--orange-2); font-variant-numeric: tabular-nums; margin: 0 2px; }
+.calc input[type=range] { width: 100%; height: 28px; margin: 10px 0 0; accent-color: var(--orange); cursor: pointer; }
+.calc .say { margin-top: 16px; color: var(--ink-2); font-size: 15.5px; line-height: 1.6; }
+.calc .say b { color: var(--ink); }
+.places { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
+.places button { padding: 10px 16px; border-radius: 999px; font-weight: 700; font-size: 14.5px; letter-spacing: -.02em; box-shadow: inset 0 0 0 1.5px var(--line-l); transition: background .25s, color .25s; }
+.places button[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: none; }
+.people { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-weight: 700; font-size: 15px; }
+.qty { display: inline-flex; align-items: center; border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--line-l); }
+.qty button { width: 36px; height: 34px; font-size: 17px; font-weight: 700; }
+.qty output { min-width: 26px; text-align: center; font-size: 15px; font-weight: 800; color: inherit; margin: 0; }
+.mine-res { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line-l); }
+.mine-big { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; font-weight: 800; }
+.mine-big b { font-size: clamp(38px, 4.2vw, 56px); letter-spacing: -.045em; line-height: 1.05; }
+.mine-sub { margin-top: 8px; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.mine-fig { margin: 0; min-width: 0; }
+.mine-fig .im { aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; background: var(--fog); }
+.mine-fig img { width: 100%; height: 100%; object-fit: cover; transition: opacity .25s; }
+.mine-fig figcaption { margin-top: 14px; }
+.mine-fig b { font-size: 19px; font-weight: 800; letter-spacing: -.03em; }
+.mine-fig p { color: var(--ink-2); font-size: 15px; margin-top: 4px; line-height: 1.6; }
+.incl3 { margin-top: 8px; background: #fff; border-radius: 6px; padding: clamp(24px, 4vw, 56px); }
+.incl3 h3 { font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; letter-spacing: -.04em; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 26px; }
+.grid3 > div { border-top: 2px solid var(--ink); padding-top: 14px; }
+.grid3 b { font-size: 18px; font-weight: 800; letter-spacing: -.03em; }
+.grid3 p { color: var(--ink-2); font-size: 15px; margin-top: 6px; line-height: 1.65; }
+.ledger { display: grid; gap: 12px; }
+.lrow { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 16px; font-weight: 600; }
+.lrow b { font-size: 19px; font-weight: 800; letter-spacing: -.02em; }
+.lrow.big { font-weight: 800; }
+.lrow.big b { font-size: clamp(32px, 3.6vw, 46px); letter-spacing: -.04em; }
+.stack { display: flex; gap: 2px; height: 14px; }
+.stack i { display: block; height: 100%; transition: width .35s cubic-bezier(.2,.7,.2,1); }
+.stack .net { background: var(--ink); border-radius: 4px 0 0 4px; }
+.stack .back { background: var(--orange); border-radius: 0 4px 4px 0; }
+.lnote { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+@media (max-width: 860px) {
+  .calc, .grid3 { grid-template-columns: minmax(0, 1fr); }
+}
+
 .wear { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 8px; margin-top: 8px; }
 .wear .im { position: relative; border-radius: 6px; overflow: hidden; min-height: 400px; background: var(--black); }
 .wear .im img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .25s; }
@@ -592,10 +650,20 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
 .faq { margin-top: clamp(90px, 10vw, 140px); display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 40px; scroll-margin-top: 100px; }
 .faq h3 { font-size: clamp(26px, 3.2vw, 44px); font-weight: 800; letter-spacing: -.045em; }
 .faq .cap { color: var(--ink-2); }
-.faq dl > div { border-top: 1px solid var(--line-l); padding-block: 22px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 20px; }
-.faq dl > div:last-child { border-bottom: 1px solid var(--line-l); }
-.faq dt { font-weight: 800; font-size: 16.5px; letter-spacing: -.025em; line-height: 1.45; }
-.faq dd { color: var(--ink-2); font-size: 15px; }
+.faq-tabs { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 22px; }
+.faq-tabs button { width: 100%; max-width: 200px; text-align: left; padding: 10px 16px; border-radius: 999px; font-weight: 700; font-size: 15px; letter-spacing: -.02em; color: var(--ink-2); transition: background .25s, color .25s; }
+.faq-tabs button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.faq-list { border-bottom: 1px solid var(--line-l); }
+.faq-list details { border-top: 1px solid var(--line-l); }
+.faq-list summary { display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; font-weight: 800; font-size: 17px; letter-spacing: -.025em; line-height: 1.45; cursor: pointer; list-style: none; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; flex: none; font-size: 24px; font-weight: 400; line-height: 1; color: var(--orange-2); transition: transform .25s; }
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list details p { padding: 0 44px 22px 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.7; }
+@media (max-width: 860px) {
+  .faq-tabs { flex-direction: row; flex-wrap: wrap; margin-top: 16px; }
+  .faq-tabs button { width: auto; max-width: none; }
+}
 
 /* ---------- end ---------- */
 .end { background: var(--orange); color: var(--black); padding-block: clamp(80px, 10vw, 140px) 0; overflow: hidden; }
@@ -659,7 +727,7 @@ footer b { color: #fff; font-weight: 700; }
   .plans, .plans.biz { grid-template-columns: 1fr; }
   .start ol { grid-template-columns: 1fr 1fr; row-gap: 28px; }
   .start ol::before { display: none; }
-  .faq dl > div { grid-template-columns: 1fr; gap: 6px; }
+  .faq-list details p { padding-right: 0; }
   .float.a { left: -2%; } .float.b { right: -2%; }
 
   .aud { display: flex; width: 100%; }
@@ -713,7 +781,7 @@ footer b { color: #fff; font-weight: 700; }
   <nav class="links" aria-label="주요 메뉴">
     <a href="#about">About</a><a href="#vision">Vision</a><a href="#how">How it works</a><a href="#product">Product</a><a href="#business" data-biz>For Business</a><a href="#subscription">Subscription</a>
   </nav>
-  <a class="pill fill" href="#subscription">구독하기</a>
+  <a class="pill fill" href="#subscription" id="navCta">얼리버드 예약</a>
   <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sheet"><i></i><i></i></button>
   <span class="bar" id="bar"></span>
 </header>
@@ -741,6 +809,7 @@ footer b { color: #fff; font-weight: 700; }
       <h1 class="cond"><span>Your trainer,</span><span class="l2">always on.</span></h1>
       <div class="side">
         <p>누구나 언제든 자신에게 맞는 코칭을 경험할 수 있는 피지컬 AI 피트니스 플랫폼</p>
+        <a class="hero-eb" id="heroEb" href="#subscription"></a>
         <button class="pill fill" id="filmBtn" type="button"><i class="tri"></i>브랜드 필름 0:45</button>
       </div>
     </div>
@@ -1212,11 +1281,15 @@ footer b { color: #fff; font-weight: 700; }
 
 <!-- 06 SUBSCRIPTION -->
 <section class="sub" id="subscription">
+  <div class="ebar" id="ebar"><div class="x ebar-in">
+    <span><b class="cond">Early Bird</b><span id="ebLine"></span></span>
+    <span class="num">마감까지 <span id="ebCd"></span></span>
+  </div></div>
   <div class="x">
     <div class="sub-head">
       <div>
-        <h2>이용 방법과 구독 플랜</h2>
-        <p>구독하면 PIT이 설치된 운동 공간에서 서비스를 이용하거나, 가정에 PIT을 설치해 운동할 수 있습니다.</p>
+        <h2 id="subH">운동하는 곳이 달라져도,<br>코칭은 이어집니다.</h2>
+        <p id="subP">코칭은 모든 플랜이 같습니다. 어디서 운동하느냐에 따라 요금만 달라집니다.</p>
       </div>
       <div class="seg" id="segWho" role="group" aria-label="이용자 유형">
         <span class="knob" aria-hidden="true"></span>
@@ -1227,30 +1300,84 @@ footer b { color: #fff; font-weight: 700; }
 
     <div class="plans" id="plansMe">
       <article class="plan">
-        <div class="top"><div><p class="cond">Zone</p><p class="who">PIT이 설치된 헬스장 · 스튜디오에서</p></div></div>
-        <div class="price"><b class="num">₩10,000~20,000</b><span class="unit">/ 월</span></div>
+        <div class="top"><div><p class="cond">Zone</p><p class="who">PIT이 있는 헬스장 · 요가 · 필라테스 · 크로스핏 공간에서</p></div><span class="tag" id="zTag"></span></div>
+        <div class="seg bill" id="segBill" role="group" aria-label="결제 주기">
+          <span class="knob" aria-hidden="true"></span>
+          <button type="button" aria-pressed="true" data-v="year">연간</button>
+          <button type="button" aria-pressed="false" data-v="month">월간</button>
+        </div>
+        <div class="price"><b class="num" id="zPrice"></b><span class="unit">/ 월</span><s class="num" id="zList"></s></div>
+        <p class="pnote" id="zNote"></p>
         <ul><li>PIT존 실시간 AI 코칭</li><li>LOOP 기록 · 리포트</li><li>가까운 PIT존 예약</li><li>루틴 마켓 · 후기 포인트</li></ul>
-        <a class="pill line" href="#start">시작하는 방법</a>
+        <p class="psep">구독 전 PIT존 첫 코칭 1회 무료. 헬스장·스튜디오 이용료는 별도입니다.</p>
+        <a class="pill line" id="zCta" href="buy.html?plan=zone&amp;bill=year">Zone 예약하기</a>
       </article>
       <article class="plan dark">
-        <svg class="ghost" viewBox="0 0 88 45" aria-hidden="true"><use href="#sym"/></svg>
-        <div class="top"><div><p class="cond">Home</p><p class="who">집에 PIT을 들여 혼자 또는 가족과</p></div><span class="tag">가정용</span></div>
-        <div class="price"><b>설치 상담</b><span class="unit">PIT 가정 설치 + 월 구독</span></div>
-        <ul><li>집에서 PIT과 1:1 코칭</li><li>가족 구성원별 기록 분리</li><li>WEAR 전용 패키지 배송</li><li>루틴 등록 · 판매 수익</li></ul>
-        <a class="pill fill" href="#start">시작하는 방법</a>
+        <div class="top"><div><p class="cond">Home</p><p class="who">집에 PIT을 들여 혼자 또는 가족과</p></div><span class="tag" id="hTag"></span></div>
+        <div class="price"><b class="num" id="hPrice"></b><span class="unit">/ 월</span><s class="num" id="hList"></s></div>
+        <p class="pnote" id="hNote"></p>
+        <ul><li>집에서 PIT과 1:1 코칭</li><li>가족 4인 기록 분리</li><li>WEAR · POD 1세트 포함</li><li>설치 · AS 포함</li><li>루틴 등록 · 판매 수익</li></ul>
+        <p class="psep" id="hSep"></p>
+        <a class="pill fill" id="hCta" href="buy.html?plan=home">Home 예약하기</a>
       </article>
     </div>
     <div class="plans biz" id="plansBiz" hidden>
       <article class="plan dark">
-        <svg class="ghost" viewBox="0 0 88 45" aria-hidden="true"><use href="#sym"/></svg>
-        <div class="top"><div><p class="cond">Business Pro</p><p class="who">헬스장 · 스튜디오 · 그룹 운동 공간</p></div><span class="tag">PRO</span></div>
-        <div class="price"><b class="num">₩890,000</b><span class="unit">/ 월 · LOOP Admin 구독 플랜 기준</span></div>
-        <ul><li>PIT 설치 · 공간 자동 매핑</li><li>LOOP Admin 실시간 관제</li><li>회원 구독 · 코칭 현황 관리</li><li>PIT 예약 스케줄 · 운영 정책</li><li>KPI · 이용 데이터 분석</li><li>WEAR 대여 운영</li></ul>
-        <a class="pill fill" href="#faq">자주 묻는 질문 보기</a>
+        <div class="top"><div><p class="cond">Business Pro</p><p class="who">헬스장 · 스튜디오 · 그룹 운동 공간</p></div><span class="tag" id="bTag"></span></div>
+        <div class="price"><b class="num" id="bPrice"></b><span class="unit">/ 월 · PIT 1대당</span><s class="num" id="bList"></s></div>
+        <p class="pnote" id="bNote"></p>
+        <ul><li>PIT 설치 · 공간 자동 매핑</li><li>LOOP Admin 실시간 관제</li><li>회원 구독 · 코칭 현황 관리</li><li>PIT 예약 스케줄 · 운영 정책</li><li>KPI · 이용 데이터 분석</li><li>회원 구독료 30% 배분</li></ul>
+        <a class="pill fill" id="bCta" href="buy.html?plan=biz">Business Pro 예약하기</a>
       </article>
       <div class="biz-side"><img src="assets/admin-tablet.jpg" alt="LOOP Admin 대시보드" loading="lazy"></div>
     </div>
-    <p class="note">요금은 서비스 기획 단계의 예시입니다.</p>
+
+    <div class="calc" id="calcMe">
+      <div class="calc-l">
+        <h3>내 운동으로<br>계산해 보세요</h3>
+        <div class="places" id="places" role="group" aria-label="운동하는 곳">
+          <button type="button" data-p="gym" aria-pressed="true">헬스장에서</button>
+          <button type="button" data-p="group" aria-pressed="false">스튜디오 그룹 운동</button>
+          <button type="button" data-p="home" aria-pressed="false">집에서</button>
+        </div>
+        <div class="people" id="people" hidden><span>함께 쓰는 사람</span><span class="qty"><button type="button" id="pm" aria-label="인원 줄이기">−</button><output id="pn">4</output><button type="button" id="pp" aria-label="인원 늘리기">+</button></span></div>
+        <label for="nSess">한 달에 <output id="nOut" for="nSess">8</output>번 운동한다면</label>
+        <input type="range" id="nSess" min="4" max="20" step="1" value="8">
+        <div class="mine-res" aria-live="polite">
+          <p class="mine-big"><span id="rPer"></span><b class="num" id="rEach"></b></p>
+          <p class="mine-sub" id="rSub"></p>
+        </div>
+      </div>
+      <figure class="mine-fig">
+        <div class="im"><img id="mineImg" src="assets/group-wear.jpg" alt="" loading="lazy"></div>
+        <figcaption><b id="mineT"></b><p id="mineD"></p></figcaption>
+      </figure>
+    </div>
+    <div class="incl3" id="incl3">
+      <h3>구독 하나로 이어지는 것</h3>
+      <div class="grid3">
+        <div><b>운동 전</b><p>체성분 측정과 식단 기록으로 오늘의 상태를 확인하고, 그에 맞춰 루틴을 조정합니다.</p></div>
+        <div><b>운동 중</b><p>PIT이 자세와 동작을 보고 화면과 음성으로, POD이 진동으로 바로 알려 줍니다.</p></div>
+        <div><b>운동 후</b><p>기록과 리포트가 LOOP에 쌓여 다음 운동의 기준이 됩니다. 내 루틴을 등록해 수익을 얻을 수도 있습니다.</p></div>
+      </div>
+    </div>
+    <div class="calc" id="calcBiz" hidden>
+      <div class="calc-l">
+        <h3>회원이 구독할수록<br>운영 부담이 줄어듭니다</h3>
+        <label for="nMem">PIT 1대를 쓰는 구독 회원 <output id="mOut" for="nMem">45</output>명</label>
+        <input type="range" id="nMem" min="0" max="60" step="5" value="45">
+        <p class="say" id="bizSay" aria-live="polite"></p>
+      </div>
+      <div class="ledger">
+        <div class="lrow"><span id="lFeeT">PIT 1대 월 요금</span><b class="num" id="lFee"></b></div>
+        <div class="lrow"><span>회원 구독료 배분</span><b class="num" id="lShare"></b></div>
+        <div class="stack" aria-hidden="true"><i class="net" id="sNet"></i><i class="back" id="sBack"></i></div>
+        <div class="lrow big"><span>운영자 실부담</span><b class="num" id="lNet"></b></div>
+        <div class="lrow"><span>실부담을 채우는 신규 회원 (월 회비 ₩70,000 예시)</span><b class="num" id="lNew"></b></div>
+        <p class="lnote" id="lNote"></p>
+      </div>
+    </div>
+    <p class="note" id="subNote"></p>
 
     <div class="wear">
       <div class="im"><img id="wearImg" src="assets/wear-arm.jpg" alt="WEAR를 착용한 사용자" loading="lazy" style="object-position:50% 30%"></div>
@@ -1263,6 +1390,7 @@ footer b { color: #fff; font-weight: 700; }
         </div>
         <div class="wcopy" aria-live="polite"><b id="wT">개인 구매</b><p id="wD">LOOP 앱에서 WEAR 구매를 선택하면 전용 패키지 박스에 담겨 집으로 배송됩니다. 대근육 부위별로 필요한 WEAR를 골라 어디서든 운동합니다.</p></div>
         <small>POD은 모든 WEAR에 호환되며, POD을 분리하면 WEAR만 따로 세탁할 수 있습니다.</small>
+        <a class="pill line" href="buy.html?plan=zone&amp;bill=year&amp;wear=buy" style="align-self:flex-start;margin-top:14px">WEAR와 함께 예약하기</a>
       </div>
     </div>
 
@@ -1277,17 +1405,36 @@ footer b { color: #fff; font-weight: 700; }
     </div>
 
     <div class="faq" id="faq">
-      <div><h3>자주 묻는 질문</h3></div>
-      <dl>
-        <div><dt>PIT은 개인용인가요, 헬스장 장비인가요?</dt><dd>둘 다 됩니다. PIT이 설치된 헬스장·스튜디오에서 구독 회원으로 이용하거나, 집에 PIT을 설치해 이용할 수 있습니다.</dd></div>
-        <div><dt>근육을 얼마나 쓰는지 카메라만으로 아나요?</dt><dd>아닙니다. PIT의 카메라는 관절 위치, 동작 궤적, 가동 범위를 보고, WEAR에 장착한 POD이 EMG·IMU·압력 데이터로 근육 활성도를 측정해 PIT에 전달합니다. 두 데이터를 결합해 판단합니다.</dd></div>
-        <div><dt>PIT 한 대가 여러 사람을 코칭하나요?</dt><dd>네. 가족 운동이나 요가·필라테스·크로스핏 같은 그룹 운동에서도 하나의 PIT이 사람마다 따로 분석해 개인별 피드백을 줍니다.</dd></div>
-        <div><dt>루틴 판매는 트레이너만 할 수 있나요?</dt><dd>일반 사용자도 됩니다. 실제로 수행한 기록으로 루틴을 등록하고, 다른 사용자가 구매하면 수익을 얻습니다.</dd></div>
-        <div><dt>POD과 WEAR는 왜 나뉘어 있나요?</dt><dd>POD은 모든 WEAR에 호환되는 코어 패치입니다. WEAR는 대근육 부위별로 따로 구매하고 세탁할 수 있어서, 운동 루틴에 맞는 WEAR를 입고 POD을 장착합니다. PIT의 도킹 포트에서 POD 3개를 충전합니다.</dd></div>
-        <div><dt>체성분은 어떻게 측정하나요?</dt><dd>PIT 측면의 센싱 베젤에 손을 대고, 본체 하단에서 꺼낸 발판에 올라서면 BIA 방식으로 측정합니다. 결과는 LOOP의 신체 정보에 자동으로 반영됩니다.</dd></div>
-        <div><dt>식단도 기록할 수 있나요?</dt><dd>네. LOOP에서 음식을 촬영하면 AI가 메뉴와 양을 분석해 칼로리와 식단 데이터를 기록합니다. 검색이나 직접 입력도 됩니다.</dd></div>
-        <div><dt>운영자는 무엇을 관리하나요?</dt><dd>LOOP Admin에서 PIT의 가동 일정과 배터리, 공간 매핑, 회원 구독 현황, 실시간 코칭 진행 상황을 관리합니다. <a href="#business" data-biz>운영자 페이지에서 자세히 보기</a></dd></div>
-      </dl>
+      <div class="faq-side"><h3>자주 묻는 질문</h3>
+        <div class="faq-tabs" id="faqTabs" role="group" aria-label="질문 분류"><button type="button" data-c="price" aria-selected="true">요금·예약</button><button type="button" data-c="service" aria-selected="false">서비스</button><button type="button" data-c="product" aria-selected="false">제품</button><button type="button" data-c="biz" aria-selected="false">운영자</button></div>
+      </div>
+      <div>
+        <div class="faq-list" data-c="price">
+          <details name="faq-price"><summary>출시 전에 예약하면 언제부터 쓸 수 있나요?</summary><p>2027년 1월 5일부터 PIT존을 순차적으로 열고, Home과 Business Pro는 예약 순서대로 설치합니다. 얼리버드 예약은 12월 31일까지입니다.</p></details>
+          <details name="faq-price"><summary>플랜은 어떻게 고르면 되나요?</summary><p>운동하는 곳으로 고르면 됩니다. PIT이 있는 헬스장이나 스튜디오에 다니면 Zone, 집에서 혼자 또는 가족과 운동하면 Home입니다. 코칭은 어느 플랜이든 같습니다.</p></details>
+          <details name="faq-price"><summary>Zone 요금에 시설 이용료가 포함되나요?</summary><p>아닙니다. 헬스장·스튜디오 이용료는 별도입니다. PIT 요금은 운영자가 부담하고 여러 회원이 예약해 나눠 쓰기 때문에, 회원은 코칭만 구독합니다.</p></details>
+          <details name="faq-price"><summary>해지는 어떻게 하나요?</summary><p>Zone 월간은 언제든 해지할 수 있습니다. 연간은 이용한 달을 월간 요금으로 계산하고 남은 금액을 환불합니다. Home과 Business Pro의 예약금은 설치 전 취소하면 전액 환불합니다.</p></details>
+          <details name="faq-price"><summary>Home 48개월 약정이 끝나면요?</summary><p>PIT은 고객 소유가 되고, Zone 월간 요금으로 코칭과 LOOP를 계속 이용합니다.</p></details>
+        </div>
+        <div class="faq-list" data-c="service" hidden>
+          <details name="faq-service"><summary>PT를 대신하는 서비스인가요?</summary><p>아닙니다. PITBOT은 운동 전 준비부터 운동 중 코칭, 운동 후 기록과 다음 루틴까지 이어 주는 플랫폼입니다. 헬스장, 집, 그룹 운동 어디서든 내 기록이 하나로 쌓이고, 트레이너와 운동하는 사람도 수업이 없는 날의 운동을 이어 갈 수 있습니다.</p></details>
+          <details name="faq-service"><summary>PIT은 개인용인가요, 헬스장 장비인가요?</summary><p>둘 다 됩니다. PIT이 설치된 헬스장·스튜디오에서 구독 회원으로 이용하거나, 집에 PIT을 설치해 이용할 수 있습니다.</p></details>
+          <details name="faq-service"><summary>PIT 한 대가 여러 사람을 코칭하나요?</summary><p>네. 가족 운동이나 요가·필라테스·크로스핏 같은 그룹 운동에서도 하나의 PIT이 사람마다 따로 분석해 개인별 피드백을 줍니다.</p></details>
+          <details name="faq-service"><summary>루틴 판매는 트레이너만 할 수 있나요?</summary><p>일반 사용자도 됩니다. 실제로 수행한 기록으로 루틴을 등록하고, 다른 사용자가 구매하면 수익을 얻습니다.</p></details>
+          <details name="faq-service"><summary>식단도 기록할 수 있나요?</summary><p>네. LOOP에서 음식을 촬영하면 AI가 메뉴와 양을 분석해 칼로리와 식단 데이터를 기록합니다. 검색이나 직접 입력도 됩니다.</p></details>
+        </div>
+        <div class="faq-list" data-c="product" hidden>
+          <details name="faq-product"><summary>근육을 얼마나 쓰는지 카메라만으로 아나요?</summary><p>아닙니다. PIT의 카메라는 관절 위치, 동작 궤적, 가동 범위를 보고, WEAR에 장착한 POD이 EMG·IMU·압력 데이터로 근육 활성도를 측정해 PIT에 전달합니다. 두 데이터를 결합해 판단합니다.</p></details>
+          <details name="faq-product"><summary>POD과 WEAR는 왜 나뉘어 있나요?</summary><p>POD은 모든 WEAR에 호환되는 코어 패치입니다. WEAR는 대근육 부위별로 따로 구매하고 세탁할 수 있어서, 운동 루틴에 맞는 WEAR를 입고 POD을 장착합니다. PIT의 도킹 포트에서 POD 3개를 충전합니다.</p></details>
+          <details name="faq-product"><summary>체성분은 어떻게 측정하나요?</summary><p>PIT 측면의 센싱 베젤에 손을 대고, 본체 하단에서 꺼낸 발판에 올라서면 BIA 방식으로 측정합니다. 결과는 LOOP의 신체 정보에 자동으로 반영됩니다.</p></details>
+        </div>
+        <div class="faq-list" data-c="biz" hidden>
+          <details name="faq-biz"><summary>운영자는 무엇을 관리하나요?</summary><p>LOOP Admin에서 PIT의 가동 일정과 배터리, 공간 매핑, 회원 구독 현황, 실시간 코칭 진행 상황을 관리합니다. <a href="#business" data-biz>운영자 페이지에서 자세히 보기</a></p></details>
+          <details name="faq-biz"><summary>PIT이 트레이너를 대신하나요?</summary><p>아닙니다. PIT은 트레이너가 수업하지 않는 시간에도 회원의 운동을 코칭하고 기록을 남깁니다. 트레이너는 자신의 루틴을 LOOP에 등록해 판매할 수도 있습니다.</p></details>
+          <details name="faq-biz"><summary>회원 구독료는 어떻게 나누나요?</summary><p>소속 회원의 월간 구독료에서 부가세를 뺀 금액의 30%를 운영자에게 배분합니다. PIT 1대에 회원 45명이면 월 약 ₩233,000입니다.</p></details>
+          <details name="faq-biz"><summary>요금과 약정은 어떻게 되나요?</summary><p>PIT 1대당 월 요금이며 36개월 약정입니다. 예약금은 첫 달 요금에서 차감하고, 설치 전 취소하면 전액 환불합니다.</p></details>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1295,7 +1442,7 @@ footer b { color: #fff; font-weight: 700; }
 <section class="end" aria-label="마무리">
   <div class="end-top x">
     <h2>오늘의 운동이, 다음 운동의 기준이 됩니다.</h2>
-    <a class="pill" href="#subscription">구독 플랜 보기</a>
+    <a class="pill" href="#subscription" id="endCta">얼리버드 예약하기</a>
   </div>
   <div class="x"><svg class="giant" viewBox="0 0 205 32" aria-hidden="true"><use href="#wm"/></svg></div>
 </section>
@@ -1708,6 +1855,135 @@ footer b { color: #fff; font-weight: 700; }
   });
 
   if (reduce) $$('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+})();
+</script>
+<script src="assets/shop.js"></script>
+<script>
+/* 요금 표시와 계산기. 금액은 assets/shop.js */
+(function () {
+  var S = window.SHOP, won = S.won, $ = function (q) { return document.querySelector(q); };
+  var e = S.isEarly(), P = S.pt;
+  var mdate = function () { return S.launchLabel; };
+  var bill = 'year';
+
+  $('#ebar').hidden = !e;
+  if (e) {
+    $('#ebLine').textContent = mdate() + ' 출시 전 예약 · 12월 31일까지';
+    var tick = function () { $('#ebCd').textContent = S.left(); };
+    tick(); setInterval(tick, 1000);
+    $('#heroEb').textContent = '1월 5일 출시 · 12월 31일까지 얼리버드 예약';
+  } else {
+    $('#heroEb').hidden = true;
+    $('#navCta').textContent = '구독하기'; $('#endCta').textContent = '구독 플랜 보기';
+    $('.sub').style.paddingTop = '';
+  }
+  $('#subP').textContent = '헬스장, 스튜디오, 집. 어디서 운동하든 코칭은 같고 내 기록은 하나로 이어집니다. 플랜은 운동하는 곳에 따라 고르면 됩니다.' + (e ? ' ' + mdate() + ' 출시 전, 12월 31일까지 얼리버드로 예약하세요.' : '');
+  var ctaWord = e ? '얼리버드 예약하기' : '시작하기';
+
+  function zoneMonthly() { return bill === 'year' ? S.zoneYear() / 12 : S.zone.month; }
+
+  function renderZone() {
+    var yr = bill === 'year';
+    $('#zPrice').textContent = won(zoneMonthly());
+    $('#zList').textContent = yr ? won(S.zone.month) : '';
+    $('#zTag').textContent = e && yr ? '얼리버드' : '';
+    $('#zNote').textContent = yr
+      ? '연간 ' + won(S.zoneYear()) + ' · 하루 약 ' + won(S.zoneYear() / 365) + ' · 월간보다 ' + won(S.zone.month * 12 - S.zoneYear()) + ' 절약' + (e ? ' · ' + S.zone.limit : '')
+      : '언제든 해지 · ' + (S.isPre() ? '1월 5일 첫 결제' : '매월 결제');
+    $('#zCta').textContent = 'Zone ' + ctaWord;
+    $('#zCta').href = 'buy.html?plan=zone&bill=' + bill;
+    renderMine();
+  }
+
+  /* 개인: 운동하는 곳과 횟수로 내 요금 계산 */
+  var PLACES = {"gym": {"img": "assets/group-wear.jpg", "t": "헬스장에서 혼자 운동할 때", "d": "헬스장에서 혼자 운동할 때 PIT이 곁으로 와서 자세를 보고, POD이 진동으로 알려줍니다."}, "group": {"img": "assets/scene-pilates.jpg", "t": "함께 운동해도, 코칭은 개인에게", "d": "요가, 필라테스, 크로스핏처럼 같은 동작을 해도 각자의 신체 상태와 수준에 맞는 피드백을 받습니다."}, "home": {"img": "assets/scene-home.jpg", "t": "집에서도 이어지는 개인 코칭", "d": "가족이 함께 써도 각자의 기록과 신체 상태를 구분해 맞는 루틴과 피드백을 제공합니다."}};
+  var where = 'gym', people = S.home.people, nSess = $('#nSess');
+  function renderMine() {
+    var n = +nSess.value, hm = where === 'home', P = PLACES[where];
+    var month = hm ? S.homePrice() / people : zoneMonthly();
+    $('#nOut').textContent = n; $('#pn').textContent = people;
+    $('#people').hidden = !hm;
+    $('#rPer').textContent = hm ? '1인 회당' : '회당';
+    $('#rEach').textContent = won(month / n);
+    $('#rSub').textContent = hm
+      ? 'Home ' + won(S.homePrice()) + ' / 월을 ' + people + '명이 함께 쓰면 1인당 ' + won(month) + '. 많이 운동할수록 회당 금액이 내려갑니다.'
+      : 'Zone ' + (bill === 'year' ? '연간' : '월간') + ' ' + won(month) + ' / 월. 많이 운동해도 요금은 그대로입니다. 시설 이용료는 별도입니다.';
+    var im = $('#mineImg');
+    if (im.getAttribute('src') !== P.img) im.src = P.img;
+    $('#mineT').textContent = P.t; $('#mineD').textContent = P.d;
+  }
+  nSess.addEventListener('input', renderMine);
+  $('#places').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    where = b.dataset.p;
+    [].forEach.call($('#places').children, function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    renderMine();
+  });
+  $('#pm').addEventListener('click', function () { if (people > 1) { people--; renderMine(); } });
+  $('#pp').addEventListener('click', function () { if (people < S.home.people) { people++; renderMine(); } });
+
+  /* Home · Business 요금 */
+  var hp = S.homePrice();
+  $('#hPrice').textContent = won(hp);
+  $('#hList').textContent = e ? won(S.home.list) : '';
+  $('#hTag').textContent = e ? '얼리버드' : '';
+  $('#hNote').textContent = S.home.months + '개월 약정' + (e ? ' · 정가보다 총 ' + won((S.home.list - S.home.early) * S.home.months) + ' 절약 · ' + S.home.limit : '');
+  $('#hSep').textContent = '예약금 ' + won(S.home.deposit) + '은 첫 달 요금에서 차감하고, 설치 전 취소하면 전액 환불합니다. 약정이 끝나면 PIT은 고객 소유입니다.';
+  $('#hCta').textContent = 'Home ' + ctaWord;
+  var bp = S.bizPrice();
+  $('#bPrice').textContent = won(bp);
+  $('#bList').textContent = e ? won(S.biz.list) : '';
+  $('#bTag').textContent = e ? '얼리버드' : 'PRO';
+  $('#bNote').textContent = S.biz.months + '개월 약정 · ' + (e ? '얼리버드 요금은 첫 ' + S.biz.earlyMonths + '개월 · ' + S.biz.limit + ' · ' : '') + '부가세 별도';
+  $('#bCta').textContent = 'Business Pro ' + ctaWord;
+
+  /* 운영자 계산 */
+  var nMem = $('#nMem');
+  function renderBiz() {
+    var n = +nMem.value, back = Math.min(S.bizShare(n), bp), net = bp - back;
+    $('#mOut').textContent = n;
+    $('#lFeeT').textContent = 'PIT 1대 월 요금' + (e ? ' (첫 ' + S.biz.earlyMonths + '개월)' : '');
+    $('#lFee').textContent = won(bp);
+    $('#lShare').textContent = '−' + won(back);
+    $('#lNet').textContent = won(net);
+    $('#lNew').textContent = Math.ceil(net / (70000 / 1.1)) + '명';
+    $('#sNet').style.width = (net / bp * 100) + '%';
+    $('#sBack').style.width = (back / bp * 100) + '%';
+    $('#bizSay').innerHTML = n > S.capacity
+      ? '하루 12시간, 1인 1시간, 회원당 월 ' + 8 + '회면 1대당 약 ' + S.capacity + '명이 적정합니다. 그 이상은 그룹 코칭이나 PIT 추가가 필요합니다.'
+      : '회원 한 명이 월간 구독할 때마다 <b>' + won(S.bizShare(1)) + '</b>이 운영자에게 돌아옵니다.';
+  }
+  nMem.addEventListener('input', renderBiz);
+  $('#lNote').textContent = '부가세 제외 금액입니다. 배분은 회원 월간 구독료 기준으로 계산했습니다. PIT은 회원의 운동 데이터를 공간 운영에 연결하고, 헬스장과 그룹 수업 어디서든 회원이 운동을 이어 가도록 돕습니다.';
+
+  /* 개인·운영자 전환과 요금 안내 */
+  function note(v) {
+    $('#subNote').textContent = v === 'biz' ? 'Business Pro 요금은 부가세 별도입니다.'
+      : '개인 플랜 요금은 부가세 포함입니다. Zone은 헬스장·스튜디오 이용료가 별도입니다.';
+    $('#calcMe').hidden = $('#incl3').hidden = v === 'biz'; $('#calcBiz').hidden = v !== 'biz';
+  }
+  [].forEach.call(document.querySelectorAll('#segWho button'), function (b) {
+    b.addEventListener('click', function () { note(b.dataset.v); });
+  });
+  /* 결제 주기 전환 */
+  var box = $('#segBill'), knob = box.querySelector('.knob'), bs = [].slice.call(box.querySelectorAll('button'));
+  function place(b) { knob.style.width = b.offsetWidth + 'px'; knob.style.transform = 'translateX(' + (b.offsetLeft - 4) + 'px)'; }
+  bs.forEach(function (b) { b.addEventListener('click', function () {
+    bs.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    place(b); bill = b.dataset.v; renderZone();
+  }); });
+  var placeCur = function () { place(bs.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; })[0]); };
+  placeCur(); addEventListener('resize', placeCur); addEventListener('load', placeCur);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeCur);
+
+  renderZone(); renderBiz(); note('me');
+
+  /* 자주 묻는 질문: 분류 전환 */
+  var tabs = [].slice.call(document.querySelectorAll('#faqTabs button')), lists = [].slice.call(document.querySelectorAll('#faq .faq-list'));
+  tabs.forEach(function (t) { t.addEventListener('click', function () {
+    tabs.forEach(function (x) { x.setAttribute('aria-selected', String(x === t)); });
+    lists.forEach(function (l) { l.hidden = l.dataset.c !== t.dataset.c; });
+  }); });
 })();
 </script>
 </body>
